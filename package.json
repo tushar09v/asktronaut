@@ -1,0 +1,16 @@
+{
+  "name": "asktronaut-ai-chatbot",
+  "version": "1.0.0",
+  "description": "Asktronaut AI Chatbot project",
+  "scripts": {
+    "build": "npm run build --prefix frontend",
+    "install-all": "npm install --prefix frontend && npm install --prefix backend",
+    "start": "npm start --prefix backend"
+  },
+  "dependencies": {
+    "cross-env": "^10.1.0",
+    "react-markdown": "^10.1.0",
+    "rehype-highlight": "^7.0.2",
+    "remark-gfm": "^4.0.1"
+  }
+}

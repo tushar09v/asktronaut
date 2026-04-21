@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: "Inter", system-ui, sans-serif;
+    background-color: #0a0a0a;
+    color: #f4f4f5;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #38bdf8;
+}
+
+/* ── Starfield ─────────────────────────────────────────── */
+/*  Pure CSS: 200 white dots scattered via box-shadow.     */
+/*  Minimal, non-animated, zero JS.                         */
+.starfield {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.starfield::before,
+.starfield::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: transparent;
+}
+.starfield::before {
+  /* Generated 120 small stars */
+  box-shadow:
+    120px 45px 0 0 rgba(255,255,255,0.4),
+    250px 130px 0 0 rgba(255,255,255,0.25),
+    370px 80px 0 0 rgba(255,255,255,0.3),
+    510px 210px 0 0 rgba(255,255,255,0.2),
+    640px 55px 0 0 rgba(255,255,255,0.35),
+    780px 160px 0 0 rgba(255,255,255,0.25),
+    90px 310px 0 0 rgba(255,255,255,0.2),
+    230px 400px 0 0 rgba(255,255,255,0.3),
+    460px 350px 0 0 rgba(255,255,255,0.15),
+    600px 290px 0 0 rgba(255,255,255,0.4),
+    830px 380px 0 0 rgba(255,255,255,0.22),
+    950px 100px 0 0 rgba(255,255,255,0.3),
+    1050px 250px 0 0 rgba(255,255,255,0.18),
+    1180px 70px 0 0 rgba(255,255,255,0.28),
+    1310px 180px 0 0 rgba(255,255,255,0.2),
+    40px 550px 0 0 rgba(255,255,255,0.25),
+    170px 620px 0 0 rgba(255,255,255,0.18),
+    320px 500px 0 0 rgba(255,255,255,0.3),
+    490px 680px 0 0 rgba(255,255,255,0.2),
+    710px 590px 0 0 rgba(255,255,255,0.22),
+    880px 710px 0 0 rgba(255,255,255,0.18),
+    1000px 640px 0 0 rgba(255,255,255,0.25),
+    1120px 530px 0 0 rgba(255,255,255,0.3),
+    1250px 740px 0 0 rgba(255,255,255,0.15),
+    1400px 450px 0 0 rgba(255,255,255,0.2),
+    80px 820px 0 0 rgba(255,255,255,0.25),
+    220px 900px 0 0 rgba(255,255,255,0.18),
+    400px 780px 0 0 rgba(255,255,255,0.3),
+    550px 860px 0 0 rgba(255,255,255,0.2),
+    730px 930px 0 0 rgba(255,255,255,0.15),
+    160px 200px 0 0 rgba(255,255,255,0.2),
+    290px 280px 0 0 rgba(255,255,255,0.3),
+    420px 440px 0 0 rgba(255,255,255,0.22),
+    680px 480px 0 0 rgba(255,255,255,0.18),
+    820px 270px 0 0 rgba(255,255,255,0.28),
+    1090px 390px 0 0 rgba(255,255,255,0.2),
+    1230px 490px 0 0 rgba(255,255,255,0.25),
+    1350px 310px 0 0 rgba(255,255,255,0.18),
+    55px 150px 0 0 rgba(255,255,255,0.22),
+    700px 120px 0 0 rgba(255,255,255,0.3),
+    1450px 600px 0 0 rgba(255,255,255,0.2),
+    340px 650px 0 0 rgba(255,255,255,0.25),
+    960px 800px 0 0 rgba(255,255,255,0.18),
+    1150px 880px 0 0 rgba(255,255,255,0.22),
+    480px 950px 0 0 rgba(255,255,255,0.3),
+    900px 60px 0 0 rgba(255,255,255,0.2),
+    200px 740px 0 0 rgba(255,255,255,0.18),
+    1300px 820px 0 0 rgba(255,255,255,0.25),
+    650px 770px 0 0 rgba(255,255,255,0.22),
+    1480px 200px 0 0 rgba(255,255,255,0.28);
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  animation: twinkle 6s ease-in-out infinite;
+  animation-delay: 0s;
+}
+.starfield::after {
+  box-shadow:
+    75px 380px 0 0 rgba(255,255,255,0.22),
+    195px 470px 0 0 rgba(255,255,255,0.3),
+    310px 550px 0 0 rgba(255,255,255,0.18),
+    440px 620px 0 0 rgba(255,255,255,0.25),
+    565px 430px 0 0 rgba(255,255,255,0.2),
+    690px 340px 0 0 rgba(255,255,255,0.28),
+    810px 520px 0 0 rgba(255,255,255,0.22),
+    925px 430px 0 0 rgba(255,255,255,0.18),
+    1040px 680px 0 0 rgba(255,255,255,0.3),
+    1160px 760px 0 0 rgba(255,255,255,0.2),
+    130px 870px 0 0 rgba(255,255,255,0.25),
+    260px 960px 0 0 rgba(255,255,255,0.18),
+    385px 840px 0 0 rgba(255,255,255,0.3),
+    515px 910px 0 0 rgba(255,255,255,0.22),
+    640px 990px 0 0 rgba(255,255,255,0.15),
+    760px 880px 0 0 rgba(255,255,255,0.25),
+    875px 950px 0 0 rgba(255,255,255,0.2),
+    990px 810px 0 0 rgba(255,255,255,0.28),
+    1110px 920px 0 0 rgba(255,255,255,0.18),
+    1230px 840px 0 0 rgba(255,255,255,0.25),
+    45px 700px 0 0 rgba(255,255,255,0.2),
+    175px 120px 0 0 rgba(255,255,255,0.3),
+    295px 190px 0 0 rgba(255,255,255,0.22),
+    430px 35px 0 0 rgba(255,255,255,0.18),
+    560px 175px 0 0 rgba(255,255,255,0.28),
+    695px 255px 0 0 rgba(255,255,255,0.25),
+    820px 145px 0 0 rgba(255,255,255,0.2),
+    940px 330px 0 0 rgba(255,255,255,0.22),
+    1070px 220px 0 0 rgba(255,255,255,0.3),
+    1200px 110px 0 0 rgba(255,255,255,0.18),
+    1330px 290px 0 0 rgba(255,255,255,0.25),
+    1460px 160px 0 0 rgba(255,255,255,0.2);
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  animation: twinkle 8s ease-in-out infinite;
+  animation-delay: 2.5s;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.9; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.2s ease-out forwards;
+}
+
+/* ── Shared component classes (plain CSS, no @apply) ── */
+.btn-accent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #38bdf8;
+  color: #0a0a0a;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+.btn-accent:hover {
+  background-color: #0ea5e9;
+}
+.btn-accent:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: #a1a1aa;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  border: 1px solid #222222;
+  cursor: pointer;
+  transition: border-color 150ms ease, color 150ms ease;
+}
+.btn-ghost:hover {
+  border-color: #38bdf8;
+  color: #f4f4f5;
+}
+
+.input-base {
+  width: 100%;
+  background-color: #1a1a1a;
+  color: #f4f4f5;
+  font-size: 0.875rem;
+  border-radius: 0.375rem;
+  padding: 0.625rem 0.75rem;
+  border: 1px solid #222222;
+  outline: none;
+  transition: border-color 150ms ease;
+}
+.input-base::placeholder {
+  color: #71717a;
+}
+.input-base:focus {
+  border-color: #38bdf8;
+}
+
