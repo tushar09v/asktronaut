@@ -14,7 +14,7 @@ connectDB();
 const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:3000",
-  "https://your-production-domain.com" // Update placeholder with your actual production domain
+  "http://webhosting.s3-website.ap-south-1.amazonaws.com/" // Update placeholder with your actual production domain
 ];
 
 app.use(
